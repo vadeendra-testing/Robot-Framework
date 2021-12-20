@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.8.10 on win32)" generated="20211220 20:28:53.448" rpa="false" schemaversion="2">
+<suite id="s1" name="TC 001" source="C:\AllPrograms\Python\Robot_Framework\TestCases\TC_001.robot">
+<test id="s1-t1" name="TC_001_BlazeDemo_E2E">
+<kw name="open the browser with the blazedemo url" library="resource">
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${browser}</arg>
+<arg>executable_path=${path}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20211220 20:28:53.720" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20211220 20:28:53.720" endtime="20211220 20:28:55.430"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211220 20:28:55.431" level="INFO">Opening url 'https://blazedemo.com/index.php'</msg>
+<status status="PASS" starttime="20211220 20:28:55.430" endtime="20211220 20:28:57.053"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211220 20:28:57.053" endtime="20211220 20:28:57.172"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.1 Seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20211220 20:28:57.172" endtime="20211220 20:28:57.173"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>20 Seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20211220 20:28:57.173" endtime="20211220 20:28:57.275"/>
+</kw>
+<status status="PASS" starttime="20211220 20:28:53.719" endtime="20211220 20:28:57.275"/>
+</kw>
+<kw name="select departure city" library="resource">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>xpath://select[@name='fromPort']</arg>
+<arg>Philadelphia</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20211220 20:28:57.277" level="INFO">Selecting options from selection list 'xpath://select[@name='fromPort']' by value Philadelphia.</msg>
+<status status="PASS" starttime="20211220 20:28:57.276" endtime="20211220 20:28:58.066"/>
+</kw>
+<status status="PASS" starttime="20211220 20:28:57.276" endtime="20211220 20:28:58.066"/>
+</kw>
+<kw name="select destination city" library="resource">
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>xpath://select[@name='toPort']</arg>
+<arg>London</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20211220 20:28:58.068" level="INFO">Selecting options from selection list 'xpath://select[@name='toPort']' by value London.</msg>
+<status status="PASS" starttime="20211220 20:28:58.068" endtime="20211220 20:28:58.884"/>
+</kw>
+<status status="PASS" starttime="20211220 20:28:58.067" endtime="20211220 20:28:58.885"/>
+</kw>
+<kw name="click on find flights button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://input[@value='Find Flights']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211220 20:28:58.886" level="INFO">Clicking button 'xpath://input[@value='Find Flights']'.</msg>
+<status status="PASS" starttime="20211220 20:28:58.885" endtime="20211220 20:28:59.734"/>
+</kw>
+<status status="PASS" starttime="20211220 20:28:58.885" endtime="20211220 20:28:59.735"/>
+</kw>
+<kw name="it should take to next page" library="resource">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Flights from Philadelphia to London</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20211220 20:28:59.956" level="INFO">Current page contains text 'Flights from Philadelphia to London'.</msg>
+<status status="PASS" starttime="20211220 20:28:59.735" endtime="20211220 20:28:59.956"/>
+</kw>
+<status status="PASS" starttime="20211220 20:28:59.735" endtime="20211220 20:28:59.956"/>
+</kw>
+<kw name="select choose this flight button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath:(//input[@value='Choose This Flight'])[3]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211220 20:28:59.957" level="INFO">Clicking button 'xpath:(//input[@value='Choose This Flight'])[3]'.</msg>
+<status status="PASS" starttime="20211220 20:28:59.957" endtime="20211220 20:29:00.799"/>
+</kw>
+<status status="PASS" starttime="20211220 20:28:59.957" endtime="20211220 20:29:00.799"/>
+</kw>
+<kw name="it should take to address page" library="resource">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>reserved</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20211220 20:29:01.028" level="INFO">Current page contains text 'reserved'.</msg>
+<status status="PASS" starttime="20211220 20:29:00.800" endtime="20211220 20:29:01.028"/>
+</kw>
+<status status="PASS" starttime="20211220 20:29:00.799" endtime="20211220 20:29:01.029"/>
+</kw>
+<kw name="enter all user data" library="resource">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@id='inputName']</arg>
+<arg>Python User</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211220 20:29:01.031" level="INFO">Typing text 'Python User' into text field 'xpath://input[@id='inputName']'.</msg>
+<status status="PASS" starttime="20211220 20:29:01.030" endtime="20211220 20:29:01.493"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@id='address']</arg>
+<arg>No.1234, 12th road</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211220 20:29:01.494" level="INFO">Typing text 'No.1234, 12th road' into text field 'xpath://input[@id='address']'.</msg>
+<status status="PASS" starttime="20211220 20:29:01.494" endtime="20211220 20:29:01.911"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@id='city']</arg>
+<arg>Bengaluru</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211220 20:29:01.912" level="INFO">Typing text 'Bengaluru' into text field 'xpath://input[@id='city']'.</msg>
+<status status="PASS" starttime="20211220 20:29:01.911" endtime="20211220 20:29:02.326"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@id='state']</arg>
+<arg>Karnataka</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211220 20:29:02.327" level="INFO">Typing text 'Karnataka' into text field 'xpath://input[@id='state']'.</msg>
+<status status="PASS" starttime="20211220 20:29:02.326" endtime="20211220 20:29:02.739"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@id='zipCode']</arg>
+<arg>560001</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211220 20:29:02.739" level="INFO">Typing text '560001' into text field 'xpath://input[@id='zipCode']'.</msg>
+<status status="PASS" starttime="20211220 20:29:02.739" endtime="20211220 20:29:03.141"/>
+</kw>
+<kw name="Select From List By Value" library="SeleniumLibrary">
+<arg>xpath://select[@id='cardType']</arg>
+<arg>amex</arg>
+<doc>Selects options from selection list ``locator`` by ``values``.</doc>
+<msg timestamp="20211220 20:29:03.142" level="INFO">Selecting options from selection list 'xpath://select[@id='cardType']' by value amex.</msg>
+<status status="PASS" starttime="20211220 20:29:03.141" endtime="20211220 20:29:03.945"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@id='creditCardNumber']</arg>
+<arg>69669664454544</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211220 20:29:03.945" level="INFO">Typing text '69669664454544' into text field 'xpath://input[@id='creditCardNumber']'.</msg>
+<status status="PASS" starttime="20211220 20:29:03.945" endtime="20211220 20:29:04.371"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>xpath://input[@id='creditCardMonth']</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20211220 20:29:04.371" endtime="20211220 20:29:04.632"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@id='creditCardMonth']</arg>
+<arg>11</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211220 20:29:04.632" level="INFO">Typing text '11' into text field 'xpath://input[@id='creditCardMonth']'.</msg>
+<status status="PASS" starttime="20211220 20:29:04.632" endtime="20211220 20:29:05.017"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>xpath://input[@id='creditCardYear']</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20211220 20:29:05.017" endtime="20211220 20:29:05.279"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@id='creditCardYear']</arg>
+<arg>2021</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211220 20:29:05.280" level="INFO">Typing text '2021' into text field 'xpath://input[@id='creditCardYear']'.</msg>
+<status status="PASS" starttime="20211220 20:29:05.279" endtime="20211220 20:29:05.709"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@id='nameOnCard']</arg>
+<arg>Python User</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211220 20:29:05.710" level="INFO">Typing text 'Python User' into text field 'xpath://input[@id='nameOnCard']'.</msg>
+<status status="PASS" starttime="20211220 20:29:05.709" endtime="20211220 20:29:06.195"/>
+</kw>
+<status status="PASS" starttime="20211220 20:29:01.029" endtime="20211220 20:29:06.196"/>
+</kw>
+<kw name="click on purchase flight button" library="resource">
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>xpath://input[@value='Purchase Flight']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20211220 20:29:06.199" level="INFO">Clicking button 'xpath://input[@value='Purchase Flight']'.</msg>
+<status status="PASS" starttime="20211220 20:29:06.198" endtime="20211220 20:29:07.105"/>
+</kw>
+<status status="PASS" starttime="20211220 20:29:06.197" endtime="20211220 20:29:07.105"/>
+</kw>
+<kw name="it should take to successful purchase page" library="resource">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Thank you for your purchase today</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20211220 20:29:07.336" level="INFO">Current page contains text 'Thank you for your purchase today'.</msg>
+<status status="PASS" starttime="20211220 20:29:07.107" endtime="20211220 20:29:07.336"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Id</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20211220 20:29:07.559" level="INFO">Current page contains text 'Id'.</msg>
+<status status="PASS" starttime="20211220 20:29:07.336" endtime="20211220 20:29:07.559"/>
+</kw>
+<status status="PASS" starttime="20211220 20:29:07.106" endtime="20211220 20:29:07.559"/>
+</kw>
+<kw name="close browser sessions" library="resource">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211220 20:29:07.561" endtime="20211220 20:29:09.781"/>
+</kw>
+<status status="PASS" starttime="20211220 20:29:07.560" endtime="20211220 20:29:09.781"/>
+</kw>
+<status status="PASS" starttime="20211220 20:28:53.719" endtime="20211220 20:29:09.782"/>
+</test>
+<test id="s1-t2" name="TC_002_BlazeDemo_Destination_of_the_week_link">
+<kw name="open the browser with the blazedemo url" library="resource">
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${browser}</arg>
+<arg>executable_path=${path}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20211220 20:29:09.787" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20211220 20:29:09.786" endtime="20211220 20:29:11.350"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20211220 20:29:11.351" level="INFO">Opening url 'https://blazedemo.com/index.php'</msg>
+<status status="PASS" starttime="20211220 20:29:11.350" endtime="20211220 20:29:12.971"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20211220 20:29:12.971" endtime="20211220 20:29:13.092"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.1 Seconds</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20211220 20:29:13.093" endtime="20211220 20:29:13.094"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>20 Seconds</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20211220 20:29:13.094" endtime="20211220 20:29:13.199"/>
+</kw>
+<status status="PASS" starttime="20211220 20:29:09.786" endtime="20211220 20:29:13.199"/>
+</kw>
+<kw name="click on destination of the week link" library="resource">
+<kw name="Click Link" library="SeleniumLibrary">
+<arg>destination of the week! The Beach!</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<msg timestamp="20211220 20:29:13.201" level="INFO">Clicking link 'destination of the week! The Beach!'.</msg>
+<status status="PASS" starttime="20211220 20:29:13.201" endtime="20211220 20:29:14.977"/>
+</kw>
+<status status="PASS" starttime="20211220 20:29:13.200" endtime="20211220 20:29:14.977"/>
+</kw>
+<kw name="it should display destination of the week page" library="resource">
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Destination of the week</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20211220 20:29:15.210" level="INFO">Current page contains text 'Destination of the week'.</msg>
+<status status="PASS" starttime="20211220 20:29:14.979" endtime="20211220 20:29:15.210"/>
+</kw>
+<status status="PASS" starttime="20211220 20:29:14.978" endtime="20211220 20:29:15.210"/>
+</kw>
+<kw name="close browser sessions" library="resource">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211220 20:29:15.212" endtime="20211220 20:29:17.469"/>
+</kw>
+<status status="PASS" starttime="20211220 20:29:15.211" endtime="20211220 20:29:17.469"/>
+</kw>
+<status status="PASS" starttime="20211220 20:29:09.784" endtime="20211220 20:29:17.470"/>
+</test>
+<status status="PASS" starttime="20211220 20:28:53.450" endtime="20211220 20:29:17.471"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="TC 001">TC 001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

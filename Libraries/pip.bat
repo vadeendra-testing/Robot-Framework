@@ -1,0 +1,16 @@
+pip install selenium
+pip install pytest
+pip install pytest-html
+pip install openpyxl
+pip install pytest-parallel
+pip install robotframework
+pip install robotframework-seleniumlibrary
+pip install robotframework-datadriver
+pip install robotframework-databaselibrary
+pip install robotframework-requests
+pip install robotframework-xvfb
+pip install allure-robotframework
+pip install xlrd
+pip install matplotlib
+pip install requests
+pip install jsonpath
